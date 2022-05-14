@@ -8,7 +8,7 @@ let globalChat = 'global_chat'
 
 export const loadChat = async () => {
   const { data, error } = await supabase.from(globalChat).select().order('id', { ascending: false }).limit(initChatCount)
-  chat.set(data) //data.reverse()
+  chat.set(data.reverse()) //data.reverse()
 
   const mySubscription = supabase
     .from(globalChat)
@@ -25,7 +25,7 @@ export const loadMore = async () => {
     .select()
     .order('id', { ascending: false })
     .limit((initChatCount += 5))
-  chat.set(data) //data.reverse()
+  chat.set(data.reverse()) //data.reverse()
 }
 
 export const sendMessage = async (username, message, replied_to_id, replied_to_message, replied_to_username) => {
