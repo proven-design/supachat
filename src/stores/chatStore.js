@@ -4,7 +4,7 @@ export const chat = writable([])
 
 let isAdded = false
 let initChatCount = 25
-let globalChat = 'global_chat'
+let globalChat = 'globalChat'
 
 export const loadChat = async () => {
   const { data, error } = await supabase.from(globalChat).select().order('id', { ascending: false }).limit(initChatCount)
