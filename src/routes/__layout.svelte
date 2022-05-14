@@ -26,12 +26,3 @@
 {/if}
 
 <slot />
-
-{#if uname}
-  <footer>
-    <div class="source-code">
-      <Icon name="code" />
-      <small>view source code on <a href="https://github.com/Lleweraf/supachat" target="_blank">Github</a></small>
-    </div>
-  </footer>
-{/if}

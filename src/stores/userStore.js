@@ -6,7 +6,7 @@ export const atot = writable((browser && localStorage.getItem('supachatUsername'
 
 //check if user if exists
 export const checkUser = async (username) => {
-  const { data, error } = await supabase.from('users').select().match({ username })
+  const { data, error } = await supabase.from('anonUsers').select().match({ username })
   if (error) {
     return console.error(error)
   }
@@ -16,7 +16,7 @@ export const checkUser = async (username) => {
 
 //Add user to database
 export const addUser = async (username) => {
-  const { data, error } = await supabase.from('users').insert([{ username }])
+  const { data, error } = await supabase.from('anonUsers').insert([{ username }])
 
   if (error) {
     return console.error(error)
